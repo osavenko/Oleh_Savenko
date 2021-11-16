@@ -1,0 +1,80 @@
+package com.epam.spring.homework4.service.impl;
+
+import com.epam.spring.homework4.controller.dto.RoleDto;
+import com.epam.spring.homework4.controller.exception.UnknownDtoException;
+import com.epam.spring.homework4.controller.mapper.Mapper;
+import com.epam.spring.homework4.controller.mapper.MapperFactory;
+import com.epam.spring.homework4.service.RoleService;
+import com.epam.spring.homework4.service.model.Role;
+import com.epam.spring.homework4.service.repository.Repository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class RoleServiceImpl implements RoleService {
+
+    private final Repository<Role, Integer> roleRepository;
+
+    @Override
+    public RoleDto get(Integer id) {
+        log.info("getRole by id {}", id);
+        Role role = roleRepository.get(id);
+        return mapRoleToRoleDto(role);
+    }
+
+    @Override
+    public List<RoleDto> list() {
+        log.info("get all roles");
+        return roleRepository.getAll()
+                .stream()
+                .map(this::mapRoleToRoleDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public RoleDto create(RoleDto dto) {
+        log.info("create Role with id {}", dto.getId());
+        Role role = mapRoleDtoToRole(dto);
+        role = roleRepository.create(role);
+        return mapRoleToRoleDto(role);
+    }
+
+    @Override
+    public RoleDto update(Integer key, RoleDto dto) {
+        log.info("update Role with id {}", key);
+        Role role = mapRoleDtoToRole(dto);
+        role = roleRepository.update(key, role);
+        return mapRoleToRoleDto(role);
+    }
+
+    @Override
+    public void delete(Integer key) {
+        log.info("delete Role with id {}", key);
+        roleRepository.delete(key);
+    }
+
+    private RoleDto mapRoleToRoleDto(Role role) {
+        return getMapper().toDto(role);
+    }
+
+    private Role mapRoleDtoToRole(RoleDto dto) {
+        return getMapper().toObject(dto);
+    }
+
+    private Mapper<Role, RoleDto> getMapper() {
+        Mapper<Role, RoleDto> mapper = null;
+        try {
+            mapper = MapperFactory.getMapper(new RoleDto());
+        } catch (UnknownDtoException e) {
+            log.error("Error when mapping Role to RoleDto", e);
+            throw new RuntimeException("Error when mapping User to RoleDto", e);
+        }
+        return mapper;
+    }
+}

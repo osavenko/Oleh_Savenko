@@ -1,0 +1,13 @@
+
+Add user:
+    curl -X POST localhost:8080/user -H 'Content-Type: application/json' -d '{"id":"1","name":"Oleh", "roleId":"1", "localeId":"1","activated":"true"}'
+    curl -X POST localhost:8080/role -H 'Content-Type: application/json' -d '{"id":"1","name":"Admin"}'
+
+Get users:
+    curl localhost:8080/user -H "Accept: application/json"
+
+Get user by id:
+    curl localhost:8080/user/1 -H "Accept: application/json"
+
+Delete user by id:
+    curl -X DELETE localhost:8080/user/1 -H "Accept: application/json"
