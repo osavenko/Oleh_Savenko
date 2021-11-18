@@ -37,6 +37,6 @@ public class MapperFactory {
             }
 
         }
-        throw new UnknownDtoException("Unknow DTO class " + clazz.getCanonicalName());
+        throw new UnknownDtoException("Unknown DTO class " + clazz.getCanonicalName());
     }
 }

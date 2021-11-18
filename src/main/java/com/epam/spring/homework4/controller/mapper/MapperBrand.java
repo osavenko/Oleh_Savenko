@@ -1,7 +1,7 @@
 package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.BrandDto;
-import com.epam.spring.homework4.service.model.Brand;
+import com.epam.spring.homework4.model.Brand;
 
 public class MapperBrand implements Mapper<Brand, BrandDto> {
 

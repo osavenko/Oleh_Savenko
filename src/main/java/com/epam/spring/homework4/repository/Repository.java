@@ -1,4 +1,4 @@
-package com.epam.spring.homework4.service.repository;
+package com.epam.spring.homework4.repository;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.epam.spring.homework4.service.repository.impl;
+package com.epam.spring.homework4.repository.impl;
 
-import com.epam.spring.homework4.service.model.Brand;
-import com.epam.spring.homework4.service.repository.Repository;
+import com.epam.spring.homework4.model.Brand;
+import com.epam.spring.homework4.repository.Repository;
 
 import java.util.ArrayList;
 import java.util.Collections;

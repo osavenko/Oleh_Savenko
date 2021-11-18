@@ -1,17 +1,18 @@
-package com.epam.spring.homework4.service.model;
+package com.epam.spring.homework4.model;
 
 import lombok.Builder;
 import lombok.Data;
 
+
 /**
- * Class for Locale
+ * Class for Brand
  *
  * @author Oleh Savenko
  * @version 1.0
  */
 @Data
 @Builder
-public class Locale {
+public class Brand {
     /**
      * field id
      */
@@ -20,8 +21,4 @@ public class Locale {
      * field name
      */
     private String name;
-    /**
-     * filed description
-     */
-    private String description;
 }

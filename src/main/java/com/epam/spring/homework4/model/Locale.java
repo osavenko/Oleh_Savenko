@@ -1,17 +1,17 @@
-package com.epam.spring.homework4.service.model;
+package com.epam.spring.homework4.model;
 
 import lombok.Builder;
 import lombok.Data;
 
 /**
- * Class for Role
+ * Class for Locale
  *
  * @author Oleh Savenko
  * @version 1.0
  */
 @Data
 @Builder
-public class Role {
+public class Locale {
     /**
      * field id
      */
@@ -20,4 +20,8 @@ public class Role {
      * field name
      */
     private String name;
+    /**
+     * filed description
+     */
+    private String description;
 }

@@ -2,7 +2,7 @@ package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.UserDto;
 import com.epam.spring.homework4.controller.exception.UnknownDtoException;
-import com.epam.spring.homework4.service.model.User;
+import com.epam.spring.homework4.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

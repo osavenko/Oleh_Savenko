@@ -2,7 +2,7 @@ package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.RoleDto;
 import com.epam.spring.homework4.controller.exception.UnknownDtoException;
-import com.epam.spring.homework4.service.model.Role;
+import com.epam.spring.homework4.model.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

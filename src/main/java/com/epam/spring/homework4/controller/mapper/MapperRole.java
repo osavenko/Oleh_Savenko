@@ -1,7 +1,7 @@
 package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.RoleDto;
-import com.epam.spring.homework4.service.model.Role;
+import com.epam.spring.homework4.model.Role;
 
 public class MapperRole implements Mapper<Role, RoleDto> {
 

@@ -1,7 +1,7 @@
 package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.UserDto;
-import com.epam.spring.homework4.service.model.User;
+import com.epam.spring.homework4.model.User;
 
 public class MapperUser implements Mapper<User, UserDto> {
 

@@ -1,7 +1,7 @@
 package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.LocaleDto;
-import com.epam.spring.homework4.service.model.Locale;
+import com.epam.spring.homework4.model.Locale;
 
 public class MapperLocale implements Mapper<Locale, LocaleDto> {
 
