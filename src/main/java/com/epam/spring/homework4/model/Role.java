@@ -3,6 +3,8 @@ package com.epam.spring.homework4.model;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * Class for Role
  *
@@ -19,5 +21,7 @@ public class Role {
     /**
      * field name
      */
+
+    @NotBlank
     private String name;
 }

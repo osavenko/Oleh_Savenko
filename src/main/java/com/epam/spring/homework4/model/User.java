@@ -3,6 +3,9 @@ package com.epam.spring.homework4.model;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
+
 /**
  * Class for User
  *
@@ -19,14 +22,17 @@ public class User {
     /**
      * field name
      */
+    @NotBlank
     private String name;
     /**
      * field roleId
      */
+    @Positive
     private int roleId;
     /**
      * field localeId
      */
+    @Positive
     private int localeId;
     /**
      * field activated

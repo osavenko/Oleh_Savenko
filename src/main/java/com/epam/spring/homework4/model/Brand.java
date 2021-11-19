@@ -3,6 +3,8 @@ package com.epam.spring.homework4.model;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+
 
 /**
  * Class for Brand
@@ -20,5 +22,6 @@ public class Brand {
     /**
      * field name
      */
+    @NotBlank
     private String name;
 }

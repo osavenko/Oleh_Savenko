@@ -3,6 +3,8 @@ package com.epam.spring.homework4.model;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * Class for Locale
  *
@@ -19,9 +21,12 @@ public class Locale {
     /**
      * field name
      */
+    @NotBlank
     private String name;
+
     /**
      * filed description
      */
+    @NotBlank
     private String description;
 }

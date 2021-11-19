@@ -53,7 +53,7 @@ class MapperFactoryTest {
     }
 
     @Test
-    void givenObject_whenMapperFactoryGetMapper_thenUnknowDtoException() {
+    void givenObject_whenMapperFactoryGetMapper_thenUnknownDtoException() {
         UnknownDtoException exception = assertThrows(UnknownDtoException.class, () -> {
             MapperFactory.getMapper(new Object());
         });
