@@ -2,6 +2,7 @@ package com.epam.spring.homework4.controller.mapper;
 
 import com.epam.spring.homework4.controller.dto.BrandDto;
 import com.epam.spring.homework4.model.Brand;
+import javafx.util.Builder;
 
 public class MapperBrand implements Mapper<Brand, BrandDto> {
 
@@ -10,10 +11,10 @@ public class MapperBrand implements Mapper<Brand, BrandDto> {
 
     @Override
     public Brand toObject(BrandDto dto) {
-        return Brand.builder()
-                .id(dto.getId())
-                .name(dto.getName())
-                .build();
+        Brand brand = new Brand();
+        brand.setId(dto.getId());
+        brand.setName(dto.getName());
+        return brand;
     }
 
     @Override

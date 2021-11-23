@@ -1,8 +1,9 @@
 package com.epam.spring.homework4.model;
 
-import lombok.Builder;
-import lombok.Data;
+import com.sun.tracing.dtrace.ArgsAttributes;
+import lombok.*;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 
@@ -13,15 +14,21 @@ import javax.validation.constraints.NotBlank;
  * @version 1.0
  */
 @Data
-@Builder
+@Entity
+@Table(name = "brand")
 public class Brand {
     /**
      * field id
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "brand_id")
     private int id;
     /**
      * field name
      */
     @NotBlank
+    @Column(name="name")
     private String name;
+
 }

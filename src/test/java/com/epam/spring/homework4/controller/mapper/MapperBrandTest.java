@@ -26,19 +26,18 @@ class MapperBrandTest {
 
         Brand actual = mapper.toObject(brandDto);
 
-        Brand expected = Brand.builder()
-                .id(1)
-                .name("Laska")
-                .build();
+        Brand expected = new Brand();
+        expected.setId(1);
+        expected.setName("Laska");
         assertEquals(expected, actual);
     }
 
     @Test
     void givenRole_whenToDto_thenRoleDto() {
-        Brand brand = Brand.builder()
-                .id(1)
-                .name("Laska")
-                .build();
+        Brand brand = new Brand();
+        brand.setId(1);
+        brand.setName("Laska");
+
         BrandDto expected = mapper.toDto(brand);
 
         BrandDto actual = new BrandDto();
