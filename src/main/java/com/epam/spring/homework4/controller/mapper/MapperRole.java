@@ -10,10 +10,10 @@ public class MapperRole implements Mapper<Role, RoleDto> {
 
     @Override
     public Role toObject(RoleDto dto) {
-        return Role.builder()
-                .id(dto.getId())
-                .name(dto.getName())
-                .build();
+        Role role = new Role();
+        role.setId(dto.getId());
+        role.setName(dto.getName());
+        return role;
     }
 
     @Override

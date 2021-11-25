@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class BrandServiceImpl implements BrandService {
+
     private final BrandRepository brandRepository;
 
     @Override
@@ -31,8 +32,9 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public List<BrandDto> list() {
         log.info("get all brands");
-        List<Brand> all = brandRepository.findAll();
-        return all.stream()
+        List<Brand> brands = brandRepository.findAll();
+        return brands
+                .stream()
                 .map(this::mapBrandToBrandDto)
                 .collect(Collectors.toList());
     }
@@ -56,7 +58,7 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public void delete(Integer key) {
-        log.info("save Brand with id {}", key);
+        log.info("delete Brand with id {}", key);
         brandRepository.deleteById(key);
     }
 

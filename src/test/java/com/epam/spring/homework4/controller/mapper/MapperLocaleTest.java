@@ -20,25 +20,25 @@ class MapperLocaleTest {
     }
 
     @Test
-    void givenRoleDto_whenToObject_thenRole() {
+    void givenLocaleDto_whenToObject_thenLocale() {
         localeDto.setId(1);
         localeDto.setName("ua");
 
         Locale actual = mapper.toObject(localeDto);
 
-        Locale expected = Locale.builder()
-                .id(1)
-                .name("ua")
-                .build();
+        Locale expected = new Locale();
+        expected.setId(1);
+        expected.setName("ua");
+
         assertEquals(expected, actual);
     }
 
     @Test
-    void givenRole_whenToDto_thenRoleDto() {
-        Locale locale = Locale.builder()
-                .id(1)
-                .name("ua")
-                .build();
+    void givenLocale_whenToDto_thenLocaleDto() {
+        Locale locale =new  Locale();
+        locale.setId(1);
+        locale.setName("ua");
+
         LocaleDto expected = mapper.toDto(locale);
 
         LocaleDto actual = new LocaleDto();

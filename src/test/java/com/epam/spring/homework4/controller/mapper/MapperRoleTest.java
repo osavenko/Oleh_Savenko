@@ -26,19 +26,17 @@ class MapperRoleTest {
 
         Role actual = mapper.toObject(roleDto);
 
-        Role expected = Role.builder()
-                .id(1)
-                .name("Admin")
-                .build();
+        Role expected = new Role();
+        expected.setId(1);
+        expected.setName("Admin");
         assertEquals(expected, actual);
     }
 
     @Test
     void givenRole_whenToDto_thenRoleDto() {
-        Role role = Role.builder()
-                .id(1)
-                .name("Admin")
-                .build();
+        Role role = new Role();
+                role.setId(1);
+                role.setName("Admin");
         RoleDto expected = mapper.toDto(role);
 
         RoleDto actual = new RoleDto();

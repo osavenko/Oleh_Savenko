@@ -2,6 +2,8 @@ package com.epam.spring.homework4.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +18,6 @@ import javax.validation.constraints.NotBlank;
  * @version 1.0
  */
 @Data
-@Builder
 @Entity
 @Table(name = "role")
 public class Role {

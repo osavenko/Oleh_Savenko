@@ -10,11 +10,11 @@ public class MapperLocale implements Mapper<Locale, LocaleDto> {
 
     @Override
     public Locale toObject(LocaleDto dto) {
-        return Locale.builder()
-                .id(dto.getId())
-                .name(dto.getName())
-                .description(dto.getDescription())
-                .build();
+        Locale locale = new Locale();
+        locale.setId(dto.getId());
+        locale.setName(dto.getName());
+        locale.setDescription(dto.getDescription());
+        return locale;
     }
 
     @Override

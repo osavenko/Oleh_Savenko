@@ -1,6 +1,5 @@
 package com.epam.spring.homework4.model;
 
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -16,7 +15,6 @@ import javax.validation.constraints.NotBlank;
  * @version 1.0
  */
 @Data
-@Builder
 @Entity
 @Table(name = "locale")
 public class Locale {
